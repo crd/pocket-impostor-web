@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy — Pocket Impostor</title>
+    <meta
+      name="description"
+      content="What Pocket Impostor collects, why, and what it deliberately does not. No accounts, no ads, no tracking."
+    />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F1F0ED" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141419" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Palette and type lifted from packages/ui/src/theme.ts so the page reads as part
+         of the same object as the game. Two inks on paper, nothing else saturated. -->
+    <style>
+      :root {
+        --paper: #f1f0ed;
+        --surface: #fbfaf8;
+        --rule: #d6d3cc;
+        --ink: #23232b;
+        --ink-muted: #55545f;
+        --ink-faint: #82808c;
+        --blue: #2d5f8a;
+        --rose: #8c3b54;
+        --serif: Baskerville, Georgia, 'Times New Roman', serif;
+        --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #141419;
+          --surface: #1c1c23;
+          --rule: #33333e;
+          --ink: #e7e5eb;
+          --ink-muted: #aba9b5;
+          --ink-faint: #7b7986;
+          --blue: #83b0d4;
+          --rose: #d68da2;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 5rem;
+      }
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin: 0 0 0.75rem;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 6vw, 2.75rem);
+        line-height: 1.1;
+        font-weight: 400;
+        margin: 0 0 0.5rem;
+        text-wrap: balance;
+      }
+      h2 {
+        font-family: var(--serif);
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.25;
+        margin: 2.75rem 0 0.75rem;
+        text-wrap: balance;
+      }
+      h3 {
+        font-family: var(--sans);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 1.75rem 0 0.4rem;
+      }
+      p,
+      li {
+        color: var(--ink-muted);
+      }
+      p {
+        margin: 0 0 1rem;
+      }
+      ul {
+        padding-left: 1.1rem;
+        margin: 0 0 1rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      a {
+        color: var(--blue);
+        text-underline-offset: 0.15em;
+      }
+      .lede {
+        font-size: 1.15rem;
+        color: var(--ink);
+      }
+      .updated {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--ink-faint);
+        margin-bottom: 2.5rem;
+      }
+      /* The summary is the part most people will read, so it is the part that looks
+         like a statement rather than a paragraph. */
+      .summary {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        margin: 2rem 0;
+      }
+      .summary p:last-child {
+        margin-bottom: 0;
+      }
+      .note {
+        border-left: 2px solid var(--rose);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+      }
+      /* Purpose first, detail second — the structure encodes the argument: nothing is
+         collected here that does not have a reason sitting next to it. */
+      .why {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--rose);
+        margin: 0 0 0.35rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0 1.5rem;
+        font-size: 0.95rem;
+      }
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 0.5rem 0.75rem 0.5rem 0;
+        border-bottom: 1px solid var(--rule);
+        color: var(--ink-muted);
+      }
+      th {
+        color: var(--ink);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      footer {
+        border-top: 1px solid var(--rule);
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--ink-faint);
+      }
+      footer a {
+        color: var(--ink-faint);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p class="eyebrow">Pocket Impostor</p>
+      <h1>Privacy</h1>
+      <p class="updated">Last updated 16 August 2026</p>
+
+      <p class="lede">
+        Pocket Impostor has no accounts, no ads, and no trackers. Nothing you type into it ever
+        leaves your device.
+      </p>
+
+      <div class="summary">
+        <p>
+          <strong>The short version.</strong> Player names, your own words and your scores stay on
+          your phone — always. Two things are sent: <strong>how the game was played</strong>, so we
+          can work out which parts people enjoy and make it better, and
+          <strong>what went wrong</strong> when it breaks, so we can fix it. Neither contains
+          anything you typed, anything anyone said, or any of the secret words.
+        </p>
+      </div>
+
+      <h2>What never leaves your device</h2>
+      <p>
+        Player names, any words you enter yourself, your scores, and your game settings are stored
+        locally using the operating system's own storage. They are not uploaded, not backed up to
+        us, and not shared. Deleting the app deletes all of it.
+      </p>
+      <p>
+        There is no account to create and no way to sign in, so there is nothing to connect any of
+        this to a person even in principle.
+      </p>
+
+      <h2>How the game was played</h2>
+      <p class="why">So we can make it more fun</p>
+      <p>
+        This is a small game made by one person, and the honest reason this data exists is that
+        without it we are guessing. Whether a mode is enjoyable or merely confusing looks the same
+        from the outside — unless you can see that people start a round of it and quietly stop
+        playing. The same goes for how many rounds a group actually wants, and whether the impostor
+        wins too often to be fair or too rarely to be exciting.
+      </p>
+
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>What is recorded</th>
+              <th>What it tells us</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A game started, and its settings</td>
+              <td>Which modes and options people actually choose</td>
+            </tr>
+            <tr>
+              <td>How many people were playing</td>
+              <td>Whether the rules hold up at three players or eight</td>
+            </tr>
+            <tr>
+              <td>How a round ended — caught, or not</td>
+              <td>Whether the game is balanced</td>
+            </tr>
+            <tr>
+              <td>Rounds played, and how long it took</td>
+              <td>Whether a game runs to a satisfying finish or fizzles out</td>
+            </tr>
+            <tr>
+              <td>That a round was played with your own words</td>
+              <td>Whether that feature is worth developing further</td>
+            </tr>
+            <tr>
+              <td>Which built-in word pair was dealt, as a number</td>
+              <td>Which pairs make a good round and which are duds</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Every one of those is a number or a fixed setting. They are
+        <strong>structurally incapable</strong> of holding a player's name, the words you typed, or
+        who the impostor was — that is not a promise to be careful, it is a property of how the app
+        is built, and an automated test plays a full game before every release to prove nothing
+        readable can escape.
+      </p>
+      <div class="note">
+        <p>
+          <strong>The last row is worth being precise about.</strong> The built-in word list ships
+          inside the app, so we record which of its pairs a round used — as a number, never the word
+          itself. Some pairs make a round that is over in seconds and some make one nobody can
+          solve, and there is no way to find and fix those without knowing which was played.
+        </p>
+        <p>
+          <strong>Words you type yourself are never identified</strong>, not even as a number. That
+          row is simply blank for them. Your own words are yours; the built-in list is already
+          public.
+        </p>
+      </div>
+
+      <h2>What kind of device it was</h2>
+      <p class="why">So we can fix faults we cannot reproduce</p>
+      <p>
+        A bug report of "it broke" is nearly unfixable. The same bug labelled "on Android, version
+        1.0.1, tablet-sized screen" usually points straight at the cause. Four coarse facts travel
+        with the records above:
+      </p>
+      <ul>
+        <li><strong>Platform</strong> — iPhone, Android, or the web</li>
+        <li><strong>Which version of the game</strong> you are running</li>
+        <li><strong>The major version of your operating system</strong> — "18", not "18.3.1"</li>
+        <li><strong>Screen size category</strong> — phone, tablet, or desktop</li>
+      </ul>
+      <p>
+        That is the complete list, and where it stops is deliberate. <strong>Not</strong> your
+        device model, not your exact system version, not your time zone, not your screen dimensions,
+        not your language, and not your location or IP address. Each of those would narrow things
+        down towards one particular machine, and none of them would help fix a single bug that the
+        four above cannot.
+      </p>
+
+      <h2>One random number</h2>
+      <p class="why">So the counts mean something</p>
+      <p>
+        The first time you open the game, it generates a random number and keeps it on your device.
+        It is sent with everything described above.
+      </p>
+      <p>
+        Without it the data is close to useless in two specific ways. Ten games might be one group
+        who loved it or ten groups who each tried it once and left — opposite conclusions, and no
+        way to tell them apart. And a fault reported three hundred times might be one unlucky person
+        stuck in a loop or three hundred people hitting it once, which need entirely different
+        fixes.
+      </p>
+      <p>
+        It is a number and nothing more. Not linked to a name, an email, an account, or an
+        advertising identifier. Not shared with anyone. It cannot be connected to anything outside
+        this game — including by us. Nobody can look up who it belongs to, and we have no way to
+        find out.
+      </p>
+      <div class="note">
+        <p>
+          <strong>To reset it:</strong> delete and reinstall the app, or clear this site's data in
+          your browser. A new number is generated, and the old one cannot be recovered by anybody,
+          ourselves included.
+        </p>
+        <p>No cookies are used on this website.</p>
+      </div>
+
+      <h2>When it breaks</h2>
+      <p class="why">So it stops breaking</p>
+      <p>
+        If the app crashes, it sends a report of the fault. This is handled by
+        <a href="https://sentry.io/privacy/" rel="noopener">Sentry</a> and is configured to carry as
+        little as it can while still being useful:
+      </p>
+      <ul>
+        <li>The technical detail of the fault — where in the code it happened.</li>
+        <li>
+          A list of which <em>screens</em> you had passed through, such as "setup, reveal,
+          discussion". Crash reporting normally records every button you tapped and everything the
+          app logged; that is switched off here specifically because a secret word could travel out
+          inside it. Screen names describe where a fault happened without describing anything you
+          saw.
+        </li>
+        <li>The random number above, and no other identifier.</li>
+        <li>No name, email, or account — there are none to send. No IP address is recorded.</li>
+      </ul>
+
+      <h2>What we never do</h2>
+      <ul>
+        <li>No advertising, and no advertising identifiers.</li>
+        <li>No tracking you across other apps or websites.</li>
+        <li>No selling or sharing your data with anyone.</li>
+        <li>No cookies.</li>
+        <li>No access to your microphone, camera, contacts, photos, or location.</li>
+      </ul>
+
+      <h2>Children</h2>
+      <p>
+        The game suits a general audience and collects nothing that could identify anyone, of any
+        age. It asks nobody for personal information.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes, the date at the top changes with it. If the app ever started
+        collecting something genuinely new, that would be announced in the app itself rather than
+        quietly edited in here.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions, or anything here that reads as unclear:
+        <a href="mailto:support@pocketimpostor.com">support@pocketimpostor.com</a>. A real person
+        reads it.
+      </p>
+
+      <footer><a href="/">Pocket Impostor</a> · <a href="/support/">Support</a></footer>
+    </main>
+  </body>
+</html>

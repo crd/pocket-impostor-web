@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Pocket Impostor — a word game of one wrong word</title>
+    <meta
+      name="description"
+      content="Pass one phone around. Everyone reads the same secret word — except one of you. Give a clue, argue about it, and vote out the impostor. Free, no account, works offline."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pocketimpostor.com/" />
+    <meta property="og:title" content="Pocket Impostor" />
+    <meta
+      property="og:description"
+      content="Pass one phone around. Everyone reads the same secret word — except one of you."
+    />
+    <!-- Absolute URLs: scrapers do not resolve relative paths. Declaring the dimensions
+         lets them lay out the card before the image finishes downloading. -->
+    <meta property="og:image" content="https://pocketimpostor.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="633" />
+    <meta
+      property="og:image:alt"
+      content="Five cards reading GUITAR surrounding one that reads VIOLIN."
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://pocketimpostor.com/" />
+    <meta property="twitter:title" content="Pocket Impostor" />
+    <meta
+      property="twitter:description"
+      content="Pass one phone around. Everyone reads the same secret word — except one of you."
+    />
+    <meta property="twitter:image" content="https://pocketimpostor.com/og-image.jpg" />
+    <meta
+      property="twitter:image:alt"
+      content="Five cards reading GUITAR surrounding one that reads VIOLIN."
+    />
+
+    <!-- Matches the app's paper/ink palette so the browser chrome does not flash white
+         before the bundle boots, in either theme. -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F1F0ED" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141419" />
+
+    <link rel="icon" href="./favicon.ico" />
+
+    <!-- react-native-web's recommended reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+      }
+      /* ScrollView does its own scrolling; the document must not also scroll. */
+      body {
+        overflow: hidden;
+        margin: 0;
+        background-color: #f1f0ed;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #141419;
+        }
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  <link rel="icon" href="/favicon.ico"/></head>
+
+  <body>
+    <noscript>Pocket Impostor needs JavaScript to run.</noscript>
+    <div id="root"></div>
+  <script src="/_expo/static/js/web/index-6f6a0afa51cda7fdd3922da4fbd4ed94.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support — Pocket Impostor</title>
+    <meta
+      name="description"
+      content="How to play Pocket Impostor, answers to common questions, and how to get in touch."
+    />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F1F0ED" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141419" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <style>
+      :root {
+        --paper: #f1f0ed;
+        --surface: #fbfaf8;
+        --rule: #d6d3cc;
+        --ink: #23232b;
+        --ink-muted: #55545f;
+        --ink-faint: #82808c;
+        --blue: #2d5f8a;
+        --rose: #8c3b54;
+        --serif: Baskerville, Georgia, 'Times New Roman', serif;
+        --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #141419;
+          --surface: #1c1c23;
+          --rule: #33333e;
+          --ink: #e7e5eb;
+          --ink-muted: #aba9b5;
+          --ink-faint: #7b7986;
+          --blue: #83b0d4;
+          --rose: #d68da2;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 5rem;
+      }
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin: 0 0 0.75rem;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 6vw, 2.75rem);
+        line-height: 1.1;
+        font-weight: 400;
+        margin: 0 0 1.5rem;
+        text-wrap: balance;
+      }
+      h2 {
+        font-family: var(--serif);
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.25;
+        margin: 2.75rem 0 0.75rem;
+        text-wrap: balance;
+      }
+      h3 {
+        font-family: var(--sans);
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 1.75rem 0 0.4rem;
+        color: var(--ink);
+      }
+      p,
+      li {
+        color: var(--ink-muted);
+      }
+      p {
+        margin: 0 0 1rem;
+      }
+      ol,
+      ul {
+        padding-left: 1.2rem;
+        margin: 0 0 1rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      a {
+        color: var(--blue);
+        text-underline-offset: 0.15em;
+      }
+      .lede {
+        font-size: 1.15rem;
+        color: var(--ink);
+      }
+      .contact {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        margin: 2rem 0;
+      }
+      .contact p:last-child {
+        margin-bottom: 0;
+      }
+      /* The rules, as a numbered sequence, because a round genuinely is one — the order
+         is the information. */
+      ol.rules li {
+        margin-bottom: 0.75rem;
+      }
+      .role {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        color: var(--rose);
+      }
+      footer {
+        border-top: 1px solid var(--rule);
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--ink-faint);
+      }
+      footer a {
+        color: var(--ink-faint);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p class="eyebrow">Pocket Impostor</p>
+      <h1>Support</h1>
+
+      <p class="lede">
+        One phone, three or more players, a few minutes a round. Everyone reads the same secret word
+        — except one of you.
+      </p>
+
+      <div class="contact">
+        <p>
+          <strong>Something wrong, or an idea?</strong> Write to
+          <a href="mailto:support@pocketimpostor.com">support@pocketimpostor.com</a>. It reaches a
+          person, and a real bug report gets a real answer.
+        </p>
+        <p>
+          If you are reporting a problem, the version number at the bottom of the title screen is
+          the single most useful thing to include.
+        </p>
+      </div>
+
+      <h2>How a round works</h2>
+      <ol class="rules">
+        <li>Enter everyone's names and pick a mode.</li>
+        <li>
+          The phone goes around the group. Each person holds the card down to read their word in
+          private, then passes it on.
+        </li>
+        <li>
+          Everyone gives one clue about their word out loud — enough to prove you know it, not
+          enough to hand it over.
+        </li>
+        <li>Argue about it.</li>
+        <li>
+          Vote. If the group agrees, the accused is out and their role is revealed. A tie means a
+          revote between whoever is level.
+        </li>
+      </ol>
+
+      <h2>The three modes</h2>
+
+      <h3>Blind</h3>
+      <p>
+        Everyone gets the same word. The impostor gets no word at all and has to work out what
+        everyone is talking about while pretending to already know.
+      </p>
+
+      <h3>Near word</h3>
+      <p>
+        The impostor gets a word close to the real one — <em>Guitar</em> against <em>Violin</em>.
+        They can bluff convincingly, and often do not realise they are the impostor at first.
+      </p>
+
+      <h3>Decoy</h3>
+      <p>
+        Someone gets the near word but is <span class="role">not the impostor</span>. They win by
+        surviving the vote, which means the group can be right about who sounds odd and still be
+        wrong about who to remove.
+      </p>
+
+      <h2>Common questions</h2>
+
+      <h3>Can I use my own words?</h3>
+      <p>
+        Yes. On the setup screen, choose to have someone pick the words — the way a person would
+        write them on slips of paper. Hand the phone to whoever is sitting out, or enter them
+        yourself before you start. You can play with only your own words, only the built-in ones, or
+        both.
+      </p>
+
+      <h3>Does it need an internet connection?</h3>
+      <p>No. Everything runs on the device. Aeroplanes and basements are fine.</p>
+
+      <h3>How many people do I need?</h3>
+      <p>
+        Three at a minimum. It is better with four to eight — enough people that a wrong vote is
+        possible.
+      </p>
+
+      <h3>Someone saw a card they should not have.</h3>
+      <p>
+        Start the round again. The app deliberately makes you hold a finger down to see a card, so
+        an accidental glimpse is short, but there is no recovering a round where the word got out.
+      </p>
+
+      <h3>Is my data safe?</h3>
+      <p>
+        There are no accounts and nothing you type leaves your device. The full details are on the
+        <a href="/privacy/">privacy page</a>.
+      </p>
+
+      <h3>It crashed, or something looks wrong.</h3>
+      <p>
+        Please write to
+        <a href="mailto:support@pocketimpostor.com">support@pocketimpostor.com</a> with the version
+        number from the title screen, your device, and what you were doing. Crash reports come
+        through automatically, but they cannot tell us what you expected to happen.
+      </p>
+
+      <footer><a href="/">Pocket Impostor</a> · <a href="/privacy/">Privacy</a></footer>
+    </main>
+  </body>
+</html>
